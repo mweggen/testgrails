@@ -2,15 +2,12 @@ package cxf.client.demo
 
 import com.cxf.demo.SimpleRequest
 import com.cxf.demo.SimpleResponse
+import org.grails.cxf.utils.EndpointType
+import org.grails.cxf.utils.GrailsCxfEndpoint
 
-//@GrailsCxfEndpoint(
-//        expose = EndpointType.JAX_WS_WSDL,
-//        wsdl = 'docs/SimpleService.wsdl'
-//)
+@GrailsCxfEndpoint(expose = EndpointType.SIMPLE)
 class SimpleService {
 
-    static expose = ['cxf']
-    static excludes = []
     static transactional = false
 
     SimpleResponse simpleMethod1(SimpleRequest request) {
